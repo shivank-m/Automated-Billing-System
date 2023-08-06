@@ -1,0 +1,29 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+
+<section id="header">
+    <a href="#"><img src="{% static 'img/logo.jpg'%}" class="logo" alt=""></a>
+    <div>
+        <ul id="navbar">
+            <li><a class="active" href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="Termsandconditions.html">Terms and conditions</a></li>
+            <!-- <li><a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a></li> -->
+            {% if user.is_authenticated %}
+                    <li>
+                        <a href="" class="dropdown-item">{{ user }}</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'logout' %}" class="dropdown-item">Logout</a>
+                    </li>
+                    {% else %}
+                    <li>
+                        <a href="{% url 'login' %}" class="dropdown-item">Login</a>
+                    </li>
+                    {% endif %}
+        </ul>
+    </div>
+</section>

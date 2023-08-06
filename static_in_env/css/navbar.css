@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Spartan', sans-serif;
+}
+
+
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 80px;
+    background: #E3E6F3;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    left: 0
+}
+
+/* navbar starting */
+#navbar {
+    display: center;
+    align-items: center;
+    justify-content: center;
+}
+
+#navbar li {
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
+
+}
+
+#navbar li a {
+    text-decoration: none;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    transition: 0.3s ease;
+}
+
+#navbar li a:hover,
+#navbar li a.active {
+    color: #088178;
+}
+
+#navbar li a.active::after,
+#navbar li a:hover::after {
+    content: "";
+    width: 30%;
+    height: 2px;
+    background: #088178;
+    position: absolute;
+    bottom: -4px;
+    left: 20px
+}
+
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 80px;
+    background: #E3E6F3;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    left: 0
+}
+
+/* navbar starting */
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#navbar li {
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
+
+}
+
+#navbar li a {
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    transition: 0.3s ease;
+}
+
+#navbar li a:hover,
+#navbar li a.active {
+    color: #088178;
+}
+
+#navbar li a.active::after,
+#navbar li a:hover::after {
+    content: "";
+    width: 30%;
+    height: 2px;
+    background: #088178;
+    position: absolute;
+    bottom: -4px;
+    left: 20px
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-image: url("b2g.png");
+    background-repeat: no-repeat;
+}
+
+.header {
+    width: 100%;
+    height: 40px;
+    float: left;
+    background-color: #0ca1a6;
+    box-shadow: 0 0, 0 6px 20px 0 rgba(0, 0, 0, .14);
+}
+
+.navbar {
+    width: 700px;
+    float: left;
+    text-align: left;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.navbar a {
+    display: inline-block;
+    color: black;
+    text-decoration: none;
+    padding: 0 10px;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    color: white;
+    background-color: black;
+    padding: 0 10px;
+}
+
+.active {
+    width: 1000px;
+    min-height: 688px;
+    background-color: white;
+    margin: 0 auto;
+    padding: 0px 20px 0px 20px;
+}
+
+
+
+
+.header {
+    width: 100%;
+    height: 40px;
+    float: left;
+    background-color: #0ca1a6;
+    box-shadow: 0 0, 0 6px 20px 0 rgba(0, 0, 0, .14);
+}
+
+.navbar {
+    width: 700px;
+    float: left;
+    text-align: left;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.navbar a {
+    display: inline-block;
+    color: black;
+    text-decoration: none;
+    padding: 0 10px;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    color: white;
+    background-color: black;
+    padding: 0 10px;
+}
+
+.active {
+    width: 1000px;
+    min-height: 688px;
+    background-color: white;
+    margin: 0 auto;
+    padding: 0px 20px 0px 20px;
+}

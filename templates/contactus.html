@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block home %}
+<link rel="stylesheet" href="{% static 'css/contactus.css' %}" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" />
+<script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+
+<div class="container">
+  <div class="form">
+    <div class="contact-form">
+      <span class="circle one"></span>
+      <span class="circle two"></span>
+      <div class="alert">Your message has been sent</div>
+      <form method="POST" id="contactForm">
+        {% csrf_token %}
+        <h3 class="title">Contact us</h3>
+        <h3 class="text">Having website issues? Reach out to Us.</h3>
+        <div class="input-container">
+          <input type="text" name="username" id="username" class="input" />
+          <label for="">Enter Your UserName</label>
+          <span>Username</span>
+        </div>
+        <div class="input-container">
+          <input type="tel" name="phone" id="phone" class="input" />
+          <label for="">Phone</label>
+          <span>Phone</span>
+        </div>
+        <div class="input-container textarea">
+          <textarea name="problem" id="problem" class="input"></textarea>
+          <label for="">Enter issues you are facing</label>
+          <span>Enter issues you are facing</span>
+        </div>
+        <input type="submit" value="submit" class="btn">
+      </form>
+    </div>
+    <div class="contact-info">
+      <h3 class="title"></h3>
+      <p class="text">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
+        dolorum adipisci recusandae praesentium dicta!
+      </p>
+
+      <div class="col">
+        <img class="logo" src="img/logo.jpg" alt="">
+        <h4 class="text">Contact</h4>
+        <p class="text"> <i class="fa-solid fa-phone"></i> <strong>Phone:</strong>1800-123-4567(Toll free)</p>
+        <p class="text"> <i class="fa-solid fa-location-dot"></i> <strong>Address:</strong>VIT,Vellore</p>
+
+        <p class="text"> <i class="fa-solid fa-envelope"></i> <strong>Mail:</strong>help@pharmawebsite.com</p>
+
+
+      </div>
+
+
+
+    </div>
+  </div>
+</div>
+<script src="{% static 'js/contactus.js' %}"></script>
+{% endblock home %}

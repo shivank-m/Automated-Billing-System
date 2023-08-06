@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block home %}
+<link rel="stylesheet" href="{% static 'css/bill.css' %}">
+<div class="invoice-box">
+	<table cellpadding="0" cellspacing="0">
+		<tr class="top">
+			<td colspan="2">
+				<table>
+					<tr>
+						<div>
+							<td class="title">
+								<img src="{% static 'img/logo.jpg' %}" style="width: 50%; max-width: 300px" />
+							</td>
+
+							<td>
+								Created: April 09, 2020<br />
+								Due: April 09, 2020
+							</td>
+						</div>
+					</tr>
+				</table>
+			</td>
+		</tr>
+
+		<tr class="information">
+			<td colspan="2">
+				<table>
+					<tr>
+						<td>
+							Pharma, Inc.<br />
+							12345 Vellore Road<br />
+							VIT Vellore, Vellore 18003
+						</td>
+
+						<td>
+							Pharma Corp.<br />
+							{{ customer.first_name}} {{ customer.last_name }}<br />
+							{{ customer.email }}
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+
+		<tr class="heading">
+			<td>Payment Method</td>
+			<td></td>
+			<td>Cash #</td>
+		</tr>
+
+		<tr class="details">
+			<td>Cash</td>
+			<td></td>
+			<td>₹ {{ total }}</td>
+		</tr>
+
+		<tr class="heading">
+			<td>Items</td>
+			<td style="text-align:center">Quantity</td>
+			<td>Price</td>
+
+		</tr>
+		{% for item in items %}
+		<tr class="item">
+			<td>{{ item.0 }}</td>
+			<td style="text-align:center">{{ item.2 }}</td>
+			<td>₹ {{ item.1 }}</td>
+		</tr>
+		{% endfor %}
+		<tr class="total">
+			<td></td>
+
+			<td>Total:₹ {{ total }}</td>
+		</tr>
+	</table>
+</div>
+{% endblock home %}

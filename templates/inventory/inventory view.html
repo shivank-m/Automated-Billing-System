@@ -1,0 +1,139 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block home %}
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<link rel="stylesheet" href="{% static 'css/inventory view.css' %}" />
+<link rel="stylesheet" href="https://fontawesome.com/v4.7.0/assets/font-awesome/css/font-awesome.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="container">
+	<div class="row">
+		<aside class="col-md-3">
+			<div class="card">
+				<article class="filter-group">
+					<header class="card-header">
+						<a href="#" data-toggle="collapse" data-target="#collapse_1" aria-expanded="true" class="">
+							<i class="icon-control fa fa-chevron-down"></i>
+							<h6 class="title">Product type</h6>
+						</a>
+					</header>
+					<div class="filter-content collapse show" id="collapse_1">
+						<div class="card-body">
+							<div class="input-group">
+								<div class="input-group-append">
+									<form method="POST">
+										{% csrf_token %}
+										<input type="search" placeholder="Search.." name="search_keyword"
+											style="margin-top: 10px; border-radius: 10px;padding-right:20px;padding-bottom: 2px;text-align: left;padding-top: 4px;">
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+				<article class="filter-group">
+					<header class="card-header">
+						<a href="#" data-toggle="collapse" data-target="#collapse_2" aria-expanded="true" class="">
+							<i class="icon-control fa fa-chevron-down"></i>
+							<h6 class="title">Type </h6>
+						</a>
+					</header>
+					<div class="filter-content collapse show" id="collapse_2">
+						<div class="card-body">
+							<label class="custom-control custom-checkbox">
+								<input type="checkbox" value="liquid" name="cat" class="custom-control-input">
+								<div class="custom-control-label">Liquid
+								</div>
+							</label>
+							<label class="custom-control custom-checkbox">
+								<input type="checkbox" value="tablets" name="cat" class="custom-control-input">
+								<div class="custom-control-label">Tablets
+								</div>
+							</label>
+							<label class="custom-control custom-checkbox">
+								<input type="checkbox" value="capsules" name="cat" class="custom-control-input">
+								<div class="custom-control-label">Capsules
+								</div>
+							</label>
+							<label class="custom-control custom-checkbox">
+								<input type="checkbox" value="injections" name="cat" class="custom-control-input">
+								<div class="custom-control-label">Injectibles
+								</div>
+							</label>
+							<label class="custom-control custom-checkbox">
+								<input type="checkbox" value="inhalers" name="cat" class="custom-control-input">
+								<div class="custom-control-label">Inhalers
+								</div>
+							</label>
+						</div>
+					</div>
+				</article>
+				<article class="filter-group">
+					<header class="card-header">
+						<a href="#" data-toggle="collapse" data-target="#collapse_3" aria-expanded="true" class="">
+							<i class="icon-control fa fa-chevron-down"></i>
+							<h6 class="title">Price range </h6>
+						</a>
+					</header>
+					<div class="filter-content collapse show" id="collapse_3">
+						<div class="card-body">
+							<div class="form-row">
+								<div class="form-group col-md-6">
+									<label>Min</label>
+									<input class="form-control" placeholder="$0" type="number" name="min_price">
+								</div>
+								<div class="form-group text-right col-md-6">
+									<label>Max</label>
+									<input class="form-control" placeholder="$1,0000" type="number" name="max_price">
+								</div>
+							</div>
+							<button class="btn btn-block btn-primary">Search</button>
+							</form>
+						</div>
+					</div>
+				</article>
+			</div>
+
+		</aside>
+		<main class="col-md-9">
+			<header class="border-bottom mb-4 pb-3">
+			</header>
+			<div>
+				<table style="width:90%;margin-left: 70px;margin-top: 10px;">
+					<tr>
+						<td>Item No.</td>
+						<td>Product Name</td>
+						<td>Quantity</td>
+						<td>Expiry</td>
+						<td>Discount</td>
+						<td>Price</td>
+					</tr>
+					{% for item in items %}
+					{% if item.6 == "Valid" %}
+					<tr>
+						<td>{{ item.0 }}</td>
+						<td>{{ item.1 }}</td>
+						<form method="POST">
+							{% csrf_token %}
+							<td><input type="number" id="quantity" name="quantity" min="0" max="1000000"></td>
+							<td>{{ item.2 }}</td>
+							<td>{{ item.3 }}%</td>
+							<td style="width: 20%;padding-bottom: 10px;"><br><del>Rs. {{ item.4 }}</del><br>
+								Rs. {{ item.5 }}<br>
+								<button class="btn">Add to Cart</button>
+							</td>
+							<input type="text" value="{{ item.7 }}" name="id" style="display: none;">
+						</form>
+					</tr>
+					{% endif %}
+					{% endfor %}
+				</table>
+			</div>
+		</main>
+	</div>
+</div>
+{% endblock home %}

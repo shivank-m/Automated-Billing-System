@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block home %}
+<link rel="stylesheet" href="{% static 'css/customer details.css' %}" />
+<div class="row">
+  <div class="col-75">
+    <div class="container">
+      <form method="POST">
+        {% csrf_token %}
+        <div class="row">
+          <div class="col-50">
+            <h3>Customer Details</h3>
+            <label for="fname"><i class="fa fa-user"></i>Customer Name</label>
+            <input type="text" id="fname" name="first_name" placeholder="FirstName ">
+            <input type="text" id="Mname" name="middle_name" placeholder="Middlename">
+            <input type="text" id="Lname" name="last_name" placeholder="LastName">
+
+            <label for="email"><i class="fa fa-envelope"></i> Email</label>
+            <input type="text" id="email" name="email" placeholder="xyz@gmail.com">
+            <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+            <input type="text" id="adr" name="street" placeholder="Street">
+
+            <input type="text" id="city" name="city" placeholder="City">
+            <input type="text" id="state" name="state" placeholder="State">
+            <div class="row">
+              <div class="col-50">
+                <label for="state"></label>
+
+              </div>
+              <div class="col-50">
+                <label for="zip">Phone number</label>
+                <input type="text" id="zip" name="phone" placeholder="6091******">
+              </div>
+            </div>
+          </div>
+
+
+
+        </div>
+        <label>
+          <input type="checkbox" checked="checked" name="sameadr"> Mark the checkbox only if Details entered are
+          correct</label>
+        </label>
+        <input type="submit" value="Continue to checkout" class="btn">
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock home %}

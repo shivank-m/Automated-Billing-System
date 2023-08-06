@@ -1,0 +1,147 @@
+.inventoryadd .container1 {
+	width: 1000px;
+	height: 30px;
+	background-color: transparent;
+	margin: 0 auto;
+}
+
+.inventoryadd .container2 {
+	width: 1000px;
+	height: 30px;
+	background-color: transparent;
+	margin: 0 auto;
+}
+
+.inventoryadd .logout-btn {
+	width: 150px;
+	height: 30px;
+	float: right;
+}
+
+.inventoryadd .logout-btn a {
+	display: block;
+	color: white;
+	text-decoration: none;
+	padding: 4px;
+}
+
+.inventoryadd .header {
+	width: 100%;
+	height: 40px;
+	float: left;
+	background-color: #0ca1a6;
+	box-shadow: 0 0, 0 6px 20px 0 rgba(0, 0, 0, .14);
+}
+
+/*navbar*/
+.inventoryadd .navbar {
+	width: 700px;
+	float: left;
+	text-align: left;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.inventoryadd .navbar a {
+	display: inline-block;
+	color: black;
+	text-decoration: none;
+	padding: 0 10px;
+	font-weight: bold;
+	border-radius: 10px;
+	margin-bottom: 20px;
+
+}
+
+.inventoryadd .navbar a:hover {
+	color: white;
+	background-color: black;
+	padding: 0 10px;
+}
+
+.inventoryadd .active {
+	width: 1000px;
+	min-height: 688px;
+	background-color: white;
+	margin: 0 auto;
+	padding: 0px 20px 0px 20px;
+}
+
+.inventoryadd .filler {
+	width: 100%;
+	height: 50px;
+	background-color: transparent;
+}
+
+.inventoryadd .filler2 {
+	width: 100%;
+	height: 30px;
+	background-color: transparent;
+}
+
+.inventoryadd .bigcard {
+	width: 80%;
+	padding: 0 10px 10px 10px;
+
+	display: inline-block;
+	border-radius: 10px;
+}
+
+.inventoryadd .bigcard1 {
+	float: left;
+}
+
+.inventoryadd .bigcard2 {
+	float: right;
+}
+
+.inventoryadd .bigcard1 input[type="text"],
+.inventoryadd .bigcard1 input[type="date"] {
+	position: relative;
+	padding: 5px;
+	box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.2);
+	border: 1px solid black;
+	border-radius: 5px;
+	outline: none;
+	color: black;
+	height: 25px;
+	background: White;
+	font-size: 18px;
+	text-align: left;
+}
+
+.inventoryadd .bigcard2 p {
+	padding: 10px 0 10px 0;
+}
+
+.inventoryadd .bigcard2 input[type="text"] {
+	position: realtive;
+	padding: 5px;
+	box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.2);
+	border: 1px solid black;
+	border-radius: 5px;
+	outline: none;
+	color: black;
+	height: 25px;
+	background: White;
+	font-size: 18px;
+	text-align: left;
+}
+
+.inventoryadd .bigcard2 input[type="submit"] {
+	height: 35px;
+	width: 220px;
+	box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.2);
+	border-radius: 5px;
+	background-color: #0ca1a6;
+	color: white;
+	border: 1px solid #0ca1a6;
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+}
+
+.inventoryadd .bigcard2 input[type="submit"]:hover {
+	background-color: #4CAF50;
+	border: 1px solid #4CAF50;
+	color: white;
+}
